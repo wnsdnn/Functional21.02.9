@@ -1,26 +1,96 @@
-function slide(){
-    count = 0;
-    setInterval(play, 2000)
+const join = document.querySelector(".JoinBtn a")
+const login = document.querySelector(".LoginBtn a")
+const joinclose = document.querySelector(".join_close span")
+const loginclose = document.querySelector(".login_close span")
+const joingo = document.querySelector(".join_go")
+let joinpopup = document.getElementById('join');
+let loginpopup = document.getElementById('login');
+
+let stopbtn = document.querySelector(".StopBth");
+let gobtn = document.querySelector(".GoBth");
+let leftbtn = document.querySelector(".LeftBtn");
+let rightbtn = document.querySelector(".RightBtn");
+
+let slides = document.querySelector(".slide")
+
+
+window.onload = function(){
+    slide();
+}
+
+
+let count = 0;
+
+const slide = function(){
+    let set = setInterval(play, 3000);
 
     function play(){
-        count = (count+1)%3
-        $(".slide").animate({
-            marginTop: -300*count+"px"
-        }, 600)
-    }
-}
+        count++;
+        if(count < 0){
+            count = 2;
+        }
+        if(count > 2){
+            count = 0;
+        }
+        slides.style.marginLeft = -1200*count+"px";
+        slides.style.transition = 1+"s";
+    };
+    
+    stopbtn.addEventListener("click", function(){
+        clearInterval(set);
+    });
+    gobtn.addEventListener("click", function(){
+        set = setInterval(play, 3000);
+    });
 
-function loginToggle () {
-    $('#login')
-    .toggle()
-}
+    leftbtn.addEventListener("click", function(){
+        count--;
+        if(count < 0){
+            count = 2;
+        }
+        slides.style.marginLeft = -1200*count+"px";
+        slides.style.transition = 1+"s";
+    });
+    rightbtn.addEventListener("click", function(){ 
+        count++;
+        if(count > 2){
+            count = 0;
+        }
+        slides.style.marginLeft = -1200*count+"px";
+        slides.style.transition = 1+"s";
+    });
+};
 
-function joinToggle () {
-    $('#join')
-    .toggle()
-}
 
-$(document)
-.on('ready', slide)
-.on('click', '.login li:eq(0) a, .join_close span', joinToggle )
-.on('click', '.login li:eq(1) a, .login_close span', loginToggle )
+// classList: 모든 클래스를 가져옴
+// toggle(): ()안에 있는 클래스가 있으면 지우고 없으면 적용 
+
+
+join.addEventListener("click", function(){
+    joinpopup.classList.toggle("display-none");
+});
+
+login.addEventListener("click", function(){
+    loginpopup.classList.toggle("display-none")
+});
+
+joinclose.addEventListener("click", function(){
+    joinpopup.classList.toggle("display-none");
+
+    document.querySelector("#join #id").value = "";
+    document.querySelector("#join #email").value = "";
+    document.querySelector("#join #pw").value = "";
+    document.querySelector("#join #pw2").value = "";
+})
+loginclose.addEventListener("click", function(){
+    loginpopup.classList.toggle("display-none")
+    
+    document.querySelector("#login #id").value = "";
+    document.querySelector("#login #pw").value = "";
+})
+
+joingo.addEventListener("click", function(){
+    joinpopup.classList.toggle("display-none");
+    loginpopup.classList.toggle("display-none");
+
+})

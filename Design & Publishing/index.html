@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/common.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="./js/common.js"></script>
     <title>main</title>
 </head>
 <body>
@@ -13,7 +11,6 @@
         <div class="logo">
             <ul>
                 <li>
-                    <!-- <img src="./img/Untitled-1.png" alt=""> -->
                     <img src="./img/logo.png" alt="logo">
                 </li>
             </ul>
@@ -44,8 +41,8 @@
         </div>
         <div class="login">
             <ul>
-                <li><a href="#">회원가입</a></li>
-                <li><a href="#">로그인</a></li>
+                <li class="JoinBtn"><a href="#">회원가입</a></li>
+                <li class="LoginBtn"><a href="#">로그인</a></li>
             </ul>
         </div>
     </header>
@@ -57,6 +54,10 @@
                 <li></li>
             </ul>
         </nav>
+        <button class="StopBth">멈춤</button>
+        <button class="GoBth">계속</button>
+        <button class="LeftBtn">&#10094;</button>
+        <button class="RightBtn">&#10095;</button>
         <div class="content">
             <div class="new_event">
                 <h2>new_event</h2>
@@ -98,22 +99,23 @@
         </div>
     </footer>
     
-    <section class="popup" id="join">
+    <section class="popup display-none" id="join">
         <div>
             <h3>회원가입</h3>
             <form>
                 <input type="text" id="id" placeholder="아이디를 입력하세요">
                 <input type="email" id="email" placeholder="이메일을 입력하세요">
-                <input type="password" id="pw" placeholder="비밀번호를 입력하세요">
+                <input type="password" id="pw" class="pw" placeholder="비밀번호를 입력하세요">
+                <input type="password" id="pw2" class="pw" placeholder="비밀번호 확인">
                 <button>전송</button>
             </form>
             <div class="join_close">
-                <span><a href="#" class="color">[닫기]</a></span>
+                <span><a href="#" class="color">[취소]</a></span>
             </div>
         </div>
     </section>
 
-    <section class="popup" id="login">
+    <section class="popup display-none" id="login">
         <div>
             <h3>로그인</h3>
             <form>
@@ -123,9 +125,12 @@
             </form>
             <p class="join_go">회원가입하기</p>
             <div class="login_close">
-                <span><a href="#" class="color">[닫기]</a></span>
+                <span><a href="#" class="color">[취소]</a></span>
             </div>
         </div>
     </section>
+
+
+    <script src="./js/common.js"></script>
 </body>
 </html>

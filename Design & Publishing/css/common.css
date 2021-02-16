@@ -11,7 +11,7 @@ img{vertical-align: middle;}
 .logo{margin-top: 5px;}
 
 /* header-menu */
-.header>.menu{width: 400px; line-height: 50px; width: 450px; text-align: center;}
+.header>.menu{width: 450px; line-height: 50px; text-align: center;}
 .main_menu>li{float: left; width: 150px; margin-top: 10px;}
 .sub_menu>li{height: 0; overflow: hidden; transition: .3s;}
 .main_menu>li:hover{background: #fff; color: #000;}
@@ -20,7 +20,7 @@ img{vertical-align: middle;}
 
 /* header-login */
 .header>.login{margin-top: 10px;}
-.header>.login li{float: left;}
+.header>.login li{float: left; cursor: pointer;}
 .header>.login li::after{content: "|";}
 .header>.login li:last-child::after{content: "";}
 .header>.login a:nth-child(1){margin-right: 5px;}
@@ -31,8 +31,8 @@ img{vertical-align: middle;}
 
 /* container-slide */
 .nav{width: 100%; height: 300px; overflow: hidden;}
-.slide{width: 100%; height: 900px;}
-.slide>li{width: 100%; height: 300px;}
+.slide{width: 300%; height: 100%; display: flex;}
+.slide>li{width: 1200px; height: 100%;}
 .slide>li:nth-child(1){background-image: url(/img/slide1.jpg);}
 .slide>li:nth-child(2){background-image: url(/img/slide2.jpg);}
 .slide>li:nth-child(3){background-image: url(/img/slide3.jpg);}
@@ -58,8 +58,8 @@ img{vertical-align: middle;}
 .popular_event li:nth-child(3){background-image: url(/img/content2.jpg); background-repeat: no-repeat; background-size: cover; float: left;}
 .popular_event li:nth-child(4){background-image: url(/img/content1.jpg); background-repeat: no-repeat; background-size: cover; float: right;}
 
-.new_event li, .popular_event li{opacity: .8; cursor: pointer;}
-.new_event li:hover, .popular_event li:hover{opacity: 1; transition: .3s;}
+.new_event li, .popular_event li{opacity: .8; cursor: pointer; transition: .5s;}
+.new_event li:hover, .popular_event li:hover{opacity: 1;}
 
 /* container-comments */
 .comments li{font-size: 20px;}
@@ -73,19 +73,19 @@ img{vertical-align: middle;}
 .footer span:last-child:after{content: "";}
 
 /* popup-join */
-#join{position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.7); display: none;}
-#join>div{width: 400px; height: 450px; background: #fff; margin: 0 auto; margin-top: 200px;}
+#join{position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.7);}
+#join>div{width: 400px; background: #fff; margin: 0 auto; margin-top: 200px;}
 #join h3{padding: 40px; font-size: 25px;}
 #join form{display: flex; flex-direction: column; padding: 0 40px;}
-#join #id, #join #pw, #join #email{width:95%; height: 30px; margin: 15px auto; border: none; border-bottom: 1px solid #000; font-size: 17px;}
-#join #id:focus, #join #pw:focus, #join #email:focus{outline: none;}
-#join button{width: 100%; height: 40px; border-radius: 15px; background: blue; color: #fff;}
+#join #id, #join .pw, #join #email{width:95%; height: 30px; margin: 15px auto; border: none; border-bottom: 1px solid #000; font-size: 17px;}
+#join #id:focus, #join .pw:focus, #join #email:focus{outline: none;}
+#join button{width: 100%; height: 40px; border-radius: 15px; background: blue; color: #fff; margin-top: 20px;}
 #join .join_close{margin-top: 50px; padding: 20px; text-align: right;}
 .join_close .color{color: red;}
 
 /* popup-login */
-#login{position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.7); display: none;}
-#login>div{width: 400px; height: 450px; background: #fff; margin: 0 auto; margin-top: 200px;}
+#login{position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.7);}
+#login>div{width: 400px; background: #fff; margin: 0 auto; margin-top: 200px;}
 #login h3{padding: 40px; font-size: 25px;}
 #login form{display: flex; flex-direction: column; padding: 0 40px;}
 #login #id, #login #pw{width:95%; height: 30px; margin: 15px auto; border: none; border-bottom: 1px solid #000; font-size: 17px;}
@@ -94,3 +94,9 @@ img{vertical-align: middle;}
 #login .join_go{width: 100%; color: blue; cursor: pointer; text-align: center; font-size: 15px; margin-top: 10px;}
 #login .login_close{margin-top: 50px; padding: 20px; text-align: right;}
 .login_close .color{color: red;}
+
+
+/* 기타 */
+.display-none{
+    display: none;
+}
